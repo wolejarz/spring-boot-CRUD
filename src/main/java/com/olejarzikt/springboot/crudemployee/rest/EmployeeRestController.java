@@ -2,6 +2,7 @@ package com.olejarzikt.springboot.crudemployee.rest;
 
 import com.olejarzikt.springboot.crudemployee.dao.EmployeeDAO;
 import com.olejarzikt.springboot.crudemployee.entity.Employee;
+import com.olejarzikt.springboot.crudemployee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,15 +14,15 @@ import java.util.List;
 @RequestMapping("/api")
 public class EmployeeRestController {
 
-    private EmployeeDAO employeeDAO;
+    private EmployeeService employeeService;
 
     @Autowired
-    public EmployeeRestController(EmployeeDAO theEmployeeDAO) {
-        employeeDAO=theEmployeeDAO;
+    public EmployeeRestController(EmployeeService theEmployeeService) {
+        employeeService=theEmployeeService;
     }
 
     @GetMapping("/employess")
     public List<Employee> findAll() {
-        return employeeDAO.findAll();
+        return employeeService.findAll();
     }
 }
