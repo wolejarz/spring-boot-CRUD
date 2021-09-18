@@ -1,7 +1,6 @@
 package com.olejarzikt.springboot.crudemployee.entity;
 
 import javax.persistence.*;
-import javax.print.DocFlavor;
 
 @Entity
 @Table(name = "employee")
@@ -19,7 +18,7 @@ public class Employee {
     private String lastName;
 
     @Column(name = "email")
-    private String enail;
+    private String email;
 
     public Employee() {
     }
@@ -27,7 +26,7 @@ public class Employee {
     public Employee(String firstName, String lastName, String enail) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.enail = enail;
+        this.email = enail;
     }
 
     public int getId() {
@@ -55,11 +54,11 @@ public class Employee {
     }
 
     public String getEnail() {
-        return enail;
+        return email;
     }
 
     public void setEnail(String enail) {
-        this.enail = enail;
+        this.email = enail;
     }
 
     @Override
@@ -68,7 +67,7 @@ public class Employee {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", enail='" + enail + '\'' +
+                ", enail='" + email + '\'' +
                 '}';
     }
 }
