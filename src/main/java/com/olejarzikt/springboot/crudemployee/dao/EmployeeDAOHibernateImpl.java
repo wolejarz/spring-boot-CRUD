@@ -22,7 +22,6 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO{
     }
 
     @Override
-    @Transactional
     public List<Employee> findAll() {
         Session currentSession = entityManager.unwrap(Session.class);
         Query<Employee> theQuery = currentSession.createQuery("from Employee",Employee.class);
